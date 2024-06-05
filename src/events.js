@@ -1,5 +1,5 @@
 //Intenta separar los eventos en este archivo.
-import {cartOpen} from './cart.js'
+import {cartOpen, addProductToCart, productExist} from './cart.js'
 import {showProducts} from './menu.js';
 
 document.addEventListener('DOMContentLoaded', showProducts)
@@ -10,10 +10,15 @@ const elementsBtnAdd= document.querySelectorAll('.add-button');
 elementsBtnAdd.forEach(function(element) {
     // Agregamos un event listener a cada botón
     element.addEventListener('click', function(evt){
+        //evt.target es el elemento que disparó el evento
         const button = evt.target;
         const id= button.getAttribute("id");
         button.innerText="gooool";
+        productExist(id)
         cartOpen(id)
+        addProductToCart()
+        
+        
     });
 });
 })

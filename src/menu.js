@@ -6,7 +6,7 @@ import { products } from "../assets/data/data.js"
 export function showProducts(){
     let productList="";
     products.map(item=>{
-    productList +=`${productList}
+    productList =`${productList}
     <div class="product-container">
     <h3> ${item.name}</h3>
     <p>${item.description}</p>
