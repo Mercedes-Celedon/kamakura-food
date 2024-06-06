@@ -12,13 +12,27 @@ elementsBtnAdd.forEach(function(element) {
     element.addEventListener('click', function(evt){
         //evt.target es el elemento que disparó el evento
         const button = evt.target;
+        console.log(button)
         const id= button.getAttribute("id");
-        button.innerText="gooool";
         productExist(id)
         cartOpen(id)
-        addProductToCart()
-        
-        
+        addProductToCart()        
     });
 });
 })
+
+/*function btnEventDelete(){
+    const btnDeleteProduct=document.querySelectorAll('.close-button-cart');
+    btnDeleteProduct.forEach(function(element){
+        element.addEventListener('click', function(evt){
+            const button = evt.target;
+            console.log(button)
+            const id= button.dataset.cart;
+            console.log(id)
+            deleteProduct(id);
+            //evt.stopPropagation()
+        });
+    });
+}
+
+export{btnEventDelete};*/
