@@ -1,14 +1,13 @@
 import { products } from "../assets/data/data.js"
-//import { btnEventDelete } from "./events.js";
 //DEBE contener las funcionalidades del carrito de compras.
 const arrayCart=[];
+
 function cartOpen (id){
     const cartContainer= document.querySelector("#cart-container");
     cartContainer.style.display= "block";
 
     for(let prod of products){
         if(id == prod.id){
-            //prod.price *= 2;
             if (productExist(id)==false){
                 arrayCart.push(prod)
                 prod.quantity= 1;
@@ -31,16 +30,15 @@ function addProductToCart(){
                 <h5>${item.subtotal} €</h5>
             </div>
             <div class="quantity-container" id="quantity">
-            <button class="add-item" onclick="addItemCart(${item.quantity})">+</button>
-            <p class="quantity" onclick="removeFromCart(${item.quantity})">${item.quantity}</p>
-            <button class="reduce-item">-</button>
+            <button class="add-item" onclick="addItemCart(${item.id})">+</button>
+            <p class="quantity">${item.quantity}</p>
+            <button class="reduce-item" onclick="removeFromCart(${item.id})">-</button>
             </div>
         </div>
         `
     })
     const itemDiv= document.getElementById("cart-products");
     itemDiv.innerHTML=itemsCart;
-    //btnEventDelete();
 }
 
 function productExist(id){
@@ -51,18 +49,40 @@ function productExist(id){
     }
     return false
 }
-function printAlert(){
-    alert('golll')
-}
 function deleteProduct(id){
-    //arrayCart.splice(id, 1)
-    console.log(id)
+    const index = arrayCart.findIndex(prod => prod.id === id);
+    arrayCart.splice(index, 1);
+
+    addProductToCart();
 }
-function addItemCart(item){
-    console.log(item)
+function addItemCart(id){
+    for(let prod of arrayCart){
+        if(id == prod.id){
+            prod.quantity++;
+            prod.subtotal= prod.price * prod.quantity;
+            console.log(arrayCart)
+            break;
+        }
+    }
+    
+    addProductToCart();
 }
-function removeFromCart(item){
-   console.log(item)
+
+function removeFromCart(id){
+    for(let prod of arrayCart){
+        if(id == prod.id){
+            if(prod.quantity > 1){
+                prod.quantity--;
+                prod.subtotal= prod.price * prod.quantity;
+                console.log(arrayCart)
+                break;
+            }else{
+                deleteProduct(id);
+            }
+        }
+    }
+    
+    addProductToCart();
 }
 
 export{cartOpen, addProductToCart, productExist,deleteProduct, addItemCart,removeFromCart};
