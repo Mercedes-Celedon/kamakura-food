@@ -17,6 +17,9 @@ function cartOpen (id){
             }
         }
     }
+
+    const total = calculateTotal(arrayCart);
+    document.getElementById('cart-total').innerText = ` Total: ${total} €`;
 }
 
 function addProductToCart(){
@@ -66,6 +69,9 @@ function addItemCart(id){
     }
     
     addProductToCart();
+
+    const total = calculateTotal(arrayCart);
+    document.getElementById('cart-total').innerText = ` Total: ${total} €`;
 }
 
 function removeFromCart(id){
@@ -83,9 +89,25 @@ function removeFromCart(id){
     }
     
     addProductToCart();
+
+    const total = calculateTotal(arrayCart);
+    document.getElementById('cart-total').innerText = ` Total: ${total} €`;
 }
 
-export{cartOpen, addProductToCart, productExist,deleteProduct, addItemCart,removeFromCart};
+function calculateTotal (arraySuma) {
+    let total = 0;
+
+    for (let item of arraySuma) {
+        total += item.subtotal;
+    }
+
+    return total;
+}
+
+
+
+
+export{cartOpen, addProductToCart, productExist, deleteProduct, addItemCart, removeFromCart};
 
 // Hacer funciones disponibles globalmente
 window.deleteProduct = deleteProduct;
