@@ -1,6 +1,10 @@
 //Intenta separar los eventos en este archivo.
+import { showProducts, showFilters } from "./menu.js";
+import { filterProducts } from "./searcher.js";
+import { products } from "../assets/data/data.js";
 
-import { products } from "../assets/data/data";
-import { showProducts } from "./menu";
-
-document.addEventListener("DOMContentLoaded", () => showProducts(products));
+document.addEventListener("DOMContentLoaded", () => {
+    showFilters()
+    showProducts(products)
+    filterProducts ()
+});
