@@ -1,9 +1,9 @@
 //Intenta separar los eventos en este archivo.
 
 import {cartOpen, addProductToCart, productExist} from './cart.js'
-import {showProducts} from './menu.js';
-
-document.addEventListener('DOMContentLoaded', showProducts)
+import { showProducts, showFilters } from "./menu.js";
+import { filterProducts } from "./searcher.js";
+import { products } from "../assets/data/data.js";
 
 document.addEventListener('DOMContentLoaded', function(){
 const elementsBtnAdd= document.querySelectorAll('.add-button');
@@ -22,7 +22,7 @@ elementsBtnAdd.forEach(function(element) {
 });
 })
 
-/*function btnEventDelete(){
+function btnEventDelete(){
     const btnDeleteProduct=document.querySelectorAll('.close-button-cart');
     btnDeleteProduct.forEach(function(element){
         element.addEventListener('click', function(evt){
@@ -36,18 +36,14 @@ elementsBtnAdd.forEach(function(element) {
     });
 }
 
-export{btnEventDelete};*/
+export{btnEventDelete};
 
 
 
-//conflicto.
-/*import { showProducts, showFilters } from "./menu.js";
-import { filterProducts } from "./searcher.js";
-import { products } from "../assets/data/data.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     showFilters()
     showProducts(products)
     filterProducts ()
 });
-*/
+
