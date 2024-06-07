@@ -17,9 +17,11 @@ Hemos diseñado una web para la empresa Kamakura Food, permitiendo a sus cliente
 
 
 ###  2. Tecnología 💻
-HTML5:  Version 1.4802.
-CSS3: Version 2.34
-JavaScript: Version 14
+· HTML5:  Version 1.4802.
+
+· CSS3: Version 2.34
+
+· JavaScript: Version 14
 
 
 ### 3.  Herramientas 🛠️
