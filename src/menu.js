@@ -1,12 +1,5 @@
 //DEBE imprimir en pantalla la información de filtros.
-
-import { products } from "../assets/data/data.js"
-
-//DEBE imprimir en pantalla los productos, con su Título, descripción y precio en € y botón de añadir.
-
-
 import { filters, products} from "../assets/data/data.js";
-
 import { filterProducts } from "./searcher.js";
 import { btnAddToCart } from "./cart.js"
 
@@ -42,5 +35,6 @@ export function showProducts(products) {
 
 document.getElementById("products").innerHTML = productsHTML;
 }
+
 
 window.btnAddToCart = btnAddToCart;
