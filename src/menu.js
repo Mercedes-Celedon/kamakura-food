@@ -1,8 +1,5 @@
 //DEBE imprimir en pantalla la información de filtros.
-
-//DEBE imprimir en pantalla los productos, con su Título, descripción y precio en € y botón de añadir.
-
-import { filters} from "../assets/data/data.js";
+import { filters, products} from "../assets/data/data.js";
 import { filterProducts } from "./searcher.js";
 
 export function showFilters() {
@@ -19,6 +16,7 @@ export function showFilters() {
     });
 }
 
+//DEBE imprimir en pantalla los productos, con su Título, descripción y precio en € y botón de añadir.
 export function showProducts(products) {
     let productsHTML = "";
     products.forEach((product) => {
@@ -36,4 +34,3 @@ export function showProducts(products) {
 
 document.getElementById("products").innerHTML = productsHTML;
 }
-
