@@ -81,8 +81,12 @@ function removeFromCart(id){
     
     addProductToCart();
 }
-
-export{saveProductToArray, addProductToCart, productExist,deleteProduct, addItemCart,removeFromCart};
+function btnAddToCart(id){
+    productExist(id)
+    saveProductToArray(id)
+    addProductToCart()  
+}
+export{saveProductToArray, addProductToCart, productExist,deleteProduct, addItemCart,removeFromCart, btnAddToCart};
 
 // Hacer funciones disponibles globalmente
 window.deleteProduct = deleteProduct;
