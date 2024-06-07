@@ -1,6 +1,7 @@
 import { products } from "../assets/data/data.js"
 //DEBE contener las funcionalidades del carrito de compras.
-const arrayCart=[];
+ export const arrayCart=[];
+
 
 function saveProductToArray (id){
     const cartContainer= document.querySelector("#cart-container");
@@ -12,11 +13,12 @@ function saveProductToArray (id){
                 arrayCart.push(prod)
                 prod.quantity= 1;
                 prod.subtotal= prod.price * prod.quantity;
+                
                 break;
             }
         }
     }
-
+    console.log(arrayCart);
     const total = calculateTotal(arrayCart);
     document.getElementById('cart-total').innerText = ` Total: ${total} €`;
 }
