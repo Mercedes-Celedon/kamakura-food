@@ -1,14 +1,14 @@
 //DEBE imprimir en pantalla la información de filtros.
 
-
 import { products } from "../assets/data/data.js"
-
-
 
 //DEBE imprimir en pantalla los productos, con su Título, descripción y precio en € y botón de añadir.
 
-import { filters} from "../assets/data/data.js";
+
+import { filters, products} from "../assets/data/data.js";
+
 import { filterProducts } from "./searcher.js";
+import { btnAddToCart } from "./cart.js"
 
 export function showFilters() {
     let filtersContainer = document.getElementById('filters');
@@ -24,6 +24,7 @@ export function showFilters() {
     });
 }
 
+//DEBE imprimir en pantalla los productos, con su Título, descripción y precio en € y botón de añadir.
 export function showProducts(products) {
     let productsHTML = "";
     products.forEach((product) => {
@@ -33,7 +34,7 @@ export function showProducts(products) {
             <p>${product.description}</p>
         <div class="price-container">
             <h5>${product.price} €</h5>
-            <button class="add-button" id= "${product.id}">Añadir</button>
+            <button class="add-button" onclick="btnAddToCart(${product.id})" id= "${product.id}">Añadir</button>
         </div>
     </div>
     `;
@@ -42,4 +43,4 @@ export function showProducts(products) {
 document.getElementById("products").innerHTML = productsHTML;
 }
 
-
+window.btnAddToCart = btnAddToCart;

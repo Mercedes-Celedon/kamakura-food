@@ -2,7 +2,11 @@ import { products } from "../assets/data/data.js"
 //DEBE contener las funcionalidades del carrito de compras.
 const arrayCart=[];
 
+
 function cartOpen (id){
+
+function saveProductToArray (id){
+
     const cartContainer= document.querySelector("#cart-container");
     cartContainer.style.display= "block";
 
@@ -12,7 +16,9 @@ function cartOpen (id){
                 arrayCart.push(prod)
                 prod.quantity= 1;
                 prod.subtotal= prod.price * prod.quantity;
+
                 console.log(arrayCart)
+
                 break;
             }
         }
@@ -20,6 +26,7 @@ function cartOpen (id){
 
     const total = calculateTotal(arrayCart);
     document.getElementById('cart-total').innerText = ` Total: ${total} €`;
+
 }
 
 function addProductToCart(){
@@ -64,6 +71,7 @@ function addItemCart(id){
             prod.quantity++;
             prod.subtotal= prod.price * prod.quantity;
             console.log(arrayCart)
+
             break;
         }
     }
@@ -72,6 +80,7 @@ function addItemCart(id){
 
     const total = calculateTotal(arrayCart);
     document.getElementById('cart-total').innerText = ` Total: ${total} €`;
+
 }
 
 function removeFromCart(id){
@@ -81,6 +90,7 @@ function removeFromCart(id){
                 prod.quantity--;
                 prod.subtotal= prod.price * prod.quantity;
                 console.log(arrayCart)
+
                 break;
             }else{
                 deleteProduct(id);
@@ -90,6 +100,11 @@ function removeFromCart(id){
     
     addProductToCart();
 
+function btnAddToCart(id){
+    productExist(id)
+    saveProductToArray(id)
+    addProductToCart()  
+}
     const total = calculateTotal(arrayCart);
     document.getElementById('cart-total').innerText = ` Total: ${total} €`;
 }
@@ -103,10 +118,8 @@ function calculateTotal(arraySuma) {
 }
 
 
+export{saveProductToArray, addProductToCart, productExist,deleteProduct, addItemCart,removeFromCart, btnAddToCart};
 
-
-
-export{cartOpen, addProductToCart, productExist, deleteProduct, addItemCart, removeFromCart};
 
 // Hacer funciones disponibles globalmente
 window.deleteProduct = deleteProduct;
