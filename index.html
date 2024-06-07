@@ -54,14 +54,12 @@
                     <h3>Añade un plato a tu menú</h3>
                 </div>
                 <h2 id="cart-total">Total: €</h2>
-                <button class="proceedPay-button" id="proceedPay-button">Proceder al pago</button>
+                <button class="proceedPay-button" id="proceedPay-button" onclick="showReceipt()">Proceder al pago</button>
             </div>
             <!-- Recibo (así se debería ver) -->
             <div id="receipt-container">
 
                 <button class="close-button" id="close-receipt" type="button"><img src="./assets/img/close.svg" alt="close"></button>
-
-
                 <h2 class="receipt-title">Recibo</h2>
                 <div class="receipt-product" id="receipt-product">
                     <h3>Título</h3>
@@ -80,6 +78,7 @@
 <script src="./src/cart.js" type="module"></script>
 <script src="./src/menu.js" type="module"></script>
 <script src="./src/events.js" type="module"></script>
+<script src="./src/receipt.js" type="module"></script>
 
 </body>
 </html>
