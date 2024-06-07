@@ -94,15 +94,14 @@ function removeFromCart(id){
     document.getElementById('cart-total').innerText = ` Total: ${total} €`;
 }
 
-function calculateTotal (arraySuma) {
-    let total = 0;
 
-    for (let item of arraySuma) {
-        total += item.subtotal;
-    }
 
-    return total;
+function calculateTotal(arraySuma) {
+    return arraySuma
+        .map(item => item.subtotal)
+        .reduce((total, subtotal) => total + subtotal, 0);
 }
+
 
 
 
