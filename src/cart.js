@@ -2,7 +2,7 @@ import { products } from "../assets/data/data.js"
 //DEBE contener las funcionalidades del carrito de compras.
 const arrayCart=[];
 
-function cartOpen (id){
+function saveProductToArray (id){
     const cartContainer= document.querySelector("#cart-container");
     cartContainer.style.display= "block";
 
@@ -12,7 +12,6 @@ function cartOpen (id){
                 arrayCart.push(prod)
                 prod.quantity= 1;
                 prod.subtotal= prod.price * prod.quantity;
-                console.log(arrayCart)
                 break;
             }
         }
@@ -60,7 +59,6 @@ function addItemCart(id){
         if(id == prod.id){
             prod.quantity++;
             prod.subtotal= prod.price * prod.quantity;
-            console.log(arrayCart)
             break;
         }
     }
@@ -74,7 +72,6 @@ function removeFromCart(id){
             if(prod.quantity > 1){
                 prod.quantity--;
                 prod.subtotal= prod.price * prod.quantity;
-                console.log(arrayCart)
                 break;
             }else{
                 deleteProduct(id);
@@ -85,7 +82,7 @@ function removeFromCart(id){
     addProductToCart();
 }
 
-export{cartOpen, addProductToCart, productExist,deleteProduct, addItemCart,removeFromCart};
+export{saveProductToArray, addProductToCart, productExist,deleteProduct, addItemCart,removeFromCart};
 
 // Hacer funciones disponibles globalmente
 window.deleteProduct = deleteProduct;
