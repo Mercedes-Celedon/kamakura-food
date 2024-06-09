@@ -12,7 +12,7 @@
 
 
 
-###1. Descripción del proyecto 
+### 1. Descripción del proyecto 
 
 Hemos diseñado una web para la empresa Kamakura Food, permitiendo a sus clientes realizar pedidos en línea de manera eficiente y fácil, permitiendo presentar un menú interactivo con diversas categorías de platos japoneses y un sistema de carrito de compras para gestionar los pedidos.
 
@@ -24,9 +24,9 @@ Hemos diseñado una web para la empresa Kamakura Food, permitiendo a sus cliente
 
 
 ### 3.  Herramientas 🛠️
-Jira
-Git / GitHub
-Visual Studio Code
+- Jira
+- Git / GitHub
+- Visual Studio Code
 
 
 ### 4. Características Principales 📌
